@@ -6,7 +6,7 @@
 }
 
 .dot:not(.dragged) {
-    animation: 300ms bounce infinite alternate;
+    animation: 1000ms bounce infinite alternate;
     animation-timing-function: cubic-bezier(0.38, 0.17, 0.11, 0.85);
 }
 

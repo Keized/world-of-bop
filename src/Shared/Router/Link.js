@@ -1,8 +1,7 @@
 import useRouter from "./useRouter";
 
-
 export default function Link({href, title}) {
-    const { navigate, pathname, current } = useRouter()
+    const { navigate, pathname } = useRouter()
 
     return (
         <a

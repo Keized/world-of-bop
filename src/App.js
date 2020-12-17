@@ -10,8 +10,10 @@ function App() {
     return (
         <RouterProvider>
             <RecoilRoot>
-                <Sidebar />
-                <World/>
+                <div className="flex">
+                    <Sidebar />
+                    <World/>
+                </div>
             </RecoilRoot>
         </RouterProvider>
     );

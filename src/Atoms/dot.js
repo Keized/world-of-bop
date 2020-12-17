@@ -1,26 +1,35 @@
-import {atom, atomFamily, selector} from "recoil";
+import {atom, atomFamily, selector, selectorFamily} from "recoil";
 
-// const familyState = atom({
-//     key: 'family-state',
-//     default: {
-//         selected: null
-//     },
-// });
-//
-// const selectedDot = selector({
-//     key: 'selected-dot',
-//     get: ({get}) => {
-//         const { selected } = get(familyState);
-//         return selected;
-//     }
-// })
-//
-// const dots = atomFamily({
-//     key: 'dot-state-family',
-//     default: param => { return param; }
-// })
-
-export const dots = atom({
+export const dotsState = atom({
     key: 'dots-state',
-    default: []
+    default: {}
 })
+//
+// export const dotsSelector = selector({
+//     key: 'dots-selector',
+//     get: ({get}) => {
+//         return get(dotsSourceState)
+//             .reduce((acc, {id, ...elem}) => acc[id] = elem, {})
+//     },
+//     set: ({get, set})
+// })
+
+export const dotSelectorFamily = selectorFamily({
+    key: 'dot-selector-family',
+    get: param => ({get}) => {
+        return get(dotsState)[param];
+    },
+    set: param => ({set, get}, newState) => {
+        set(dotsState, s => ({...s, [param]: newState}))
+    }
+})
+
+export const dotStateFamily = atomFamily({
+    key: 'dot-family',
+    default: dotSelectorFamily
+})
+
+export const selectedDotsSelector = selectorFamily({
+
+})
+

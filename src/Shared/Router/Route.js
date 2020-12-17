@@ -3,7 +3,7 @@ import { RouterContext } from './RouterProvider';
 
 export default function Route({children, path, exact}) {
     const {pathname} = useContext(RouterContext);
-    const [target, setTarget] = useState(path);
+    const [target] = useState(path);
 
     useEffect(() => {
         const regex = /:[\w]+/g;
