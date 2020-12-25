@@ -1,21 +1,21 @@
 import "./World.css";
-import '../../Components/Dot/Dot.css';
 import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
-import React, {useEffect, useRef} from "react";
-import {dotSelectorFamily, dotsSourceState, dotsState, dotStateFamily} from "../../Atoms/dot";
+import React from "react";
 import Filters from "../../Components/Filters/Fiters";
 import Population from "../../Components/Population/Population";
-import Dot from "../../Components/Dot/Dot";
+import {bopsState, filteredBopSelector} from "../../Atoms/bop";
+import Bop from "../../Components/Bop/Bop";
+import AddBopButton from "../../Components/AddBopButton/AddBopButton";
 
 
 export default function World() {
-    const dots = useRecoilValue(dotsState);
+    const bops = useRecoilValue(filteredBopSelector);
 
-    return <div id="world" className="flex-1 relative overflow-hidden">
+    return <div id="world" className="flex-1 relative overflow-hidden flex h-screen">
         <Filters />
         {
-            Object.keys(dots).map(key => <Dot id={key} key={key} />)
+            Object.keys(bops).map(key => <Bop id={key} key={key} />)
         }
-        <Population />
+        <AddBopButton />
     </div>
 }

@@ -1,20 +1,20 @@
 import {useSetRecoilState} from "recoil";
 import { uuid } from 'uuidv4';
-import {dotsState} from "../../Atoms/dot";
 import {getRandomColor, getRandomPosition} from "../../helpers/helpers";
+import {bopsState} from "../../Atoms/bop";
 
-export default function Creator() {
-    const setDots = useSetRecoilState(dotsState)
+export default function BopEditor() {
+    const setBops = useSetRecoilState(bopsState)
 
     const addDot = () => {
-        const dotId = uuid();
-        const newDot = {
+        const bopId = uuid();
+        const newBop = {
             name: 'bop',
             color: getRandomColor(),
             position: getRandomPosition()
         };
 
-        setDots((s) => ({...s, [dotId]: newDot}))
+        setBops((s) => ({...s, [bopId]: newBop}))
     }
 
     return (

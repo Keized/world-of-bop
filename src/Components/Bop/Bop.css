@@ -1,4 +1,4 @@
-.dot {
+.bop {
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -7,15 +7,74 @@
     box-shadow: inset -1px -1px 5px #00000020;
 }
 
-.dot-wrapper{
-    width: 30px;
+.bop-eye {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    left: 0;
+}
+
+.bop-eye:nth-child(1) {
+    right: 0;
+    left: auto;
+}
+
+.bop-eye::before {
+    content: '';
+    position: absolute;
+    background: black;
+    bottom: 2px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    right: 0;
+}
+
+.bop-eye:nth-child(1)::before {
+    right: auto;
+    left: 0;
+}
+
+.bop-mouth::before, .bop-mouth::after {
+    content: '';
+    left: 40%;
+    position: absolute;
+    background: white;
+    top: 0;
+    height: 2px;
+    width: 1px;
+}
+
+.bop-mouth::after {
+    left: auto;
+    right: 40%;
+}
+
+.bop-mouth {
+    background: black;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 4px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius:  25px;
+}
+
+.bop-wrapper{
+    transform: scale(2);
+    width: 20px;
     height: 20px;
     position: absolute;
     display: flex;
     justify-content: center;
 }
 
-.dot-wrapper::after{
+.bop-wrapper::after{
     position: absolute;
     background: #00000010;
     display: block;
