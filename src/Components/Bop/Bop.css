@@ -5,6 +5,8 @@
     background: black;
     animation: 500ms bounce infinite alternate ease-out;
     box-shadow: inset -1px -1px 5px #00000020;
+    position: absolute;
+    bottom: 0;
 }
 
 .bop-eye {
@@ -68,10 +70,15 @@
 .bop-wrapper{
     transform: scale(2);
     width: 20px;
-    height: 20px;
+    height: 60px;
     position: absolute;
     display: flex;
     justify-content: center;
+}
+
+.bop-wrapper.edited{
+    transform: scale(5);
+    position: relative;
 }
 
 .bop-wrapper::after{
@@ -81,7 +88,7 @@
     content: '';
     width: 20px;
     height: 5px;
-    bottom: -5px;
+    bottom: 0;
     border-radius: 50%;
     box-shadow: 1px 1px 3px #00000010;
     left: 50%;
@@ -112,11 +119,6 @@
         width: 20px;
         height: 20px;
     }
-    /*95% {*/
-    /*    transform: translateY(95%);*/
-    /*    width: 20px;*/
-    /*    height: 20px;*/
-    /*}*/
     100% {
         transform: translateY(-200%);
         width: 20px;

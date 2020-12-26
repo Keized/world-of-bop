@@ -12,18 +12,10 @@ function getRandomColor() {
     return color;
 }
 
-
-export default function Bop({id = 1}) {
-    const [dot, setDot] = useRecoilState(bopSelectorFamily(id))
-
-    function changeColor() {
-        const color = getRandomColor()
-        setDot({...dot, color});
-    }
-
+export default function Bop({x, y, color, name, edited = false}) {
     return  <>
-        <div className="bop-wrapper" style={{ left: `${dot.position[0]}%`, top: `${dot.position[1]}%` }}>
-            <div className="bop" onClick={changeColor} style={{ background: dot.color }}>
+        <div className={`bop-wrapper ${edited ? 'edited': ''}`} style={{ left: `${x}%`, top: `${y}%` }}>
+            <div className="bop" style={{ background: color }}>
                     <div className="bop-eye" />
                     <div className="bop-eye" />
                     <div className="bop-mouth" />

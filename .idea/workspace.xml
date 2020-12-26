@@ -20,21 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0757b3a-ecc6-4ba0-ac31-4d4678b42308" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/AddBopButton/AddBopButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Atoms/editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Filters/Filters.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Atoms/dot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atoms/bop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Creator/Creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dot/Dot.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dot/Dot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Atoms/bop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atoms/bop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AddBopButton/AddBopButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddBopButton/AddBopButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Bop/Bop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Bop/Bop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Filters/Fiters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filters/Fiters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Admin/Admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Admin/Admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/World/World.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/World/World.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/World/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/World/World.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

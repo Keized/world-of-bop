@@ -1,0 +1,17 @@
+.filters-container {
+    z-index: 100;
+    background: linear-gradient(#00000070, rgba(255,255,255,0));
+    height: 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: .3s;
+    pointer-events: none;
+}
+
+.filters-container.active{
+    opacity: 1;
+    pointer-events: auto;
+}

@@ -39,9 +39,27 @@ export const bopStateFamily = atomFamily({
     default: bopSelectorFamily
 })
 
+
+
+export const bopColorsSelector = selector({
+    key: 'bop-colors-selector',
+    get: ({get}) => {
+        const bops = get(bopsState);
+        return Object.keys(bops).reduce((acc, key) => {
+            if (!acc.includes(bops[key].color)) {
+                acc.push({color: bops[key].color, selected: false});
+            }
+            return acc;
+        }, []);
+    }
+})
+
 export const bopFiltersState = atom({
     key: 'bop-filters-state',
-    default: ''
+    default: {
+        search: '',
+        colors: []
+    }
 })
 
 export const filteredBopSelector = selector({
@@ -51,7 +69,7 @@ export const filteredBopSelector = selector({
         const bops = get(bopsState);
 
         return Object.keys(bops).reduce((acc, key) => {
-            if (bops[key].color.includes(filters) ) {
+            if (bops[key].color.includes(filters.search)) {
                 acc[key] = bops[key];
             }
             return acc;

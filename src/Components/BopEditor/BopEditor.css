@@ -1,0 +1,13 @@
+.bop-editor-pane {
+    z-index: 99;
+    position: absolute;
+    right: -100%;
+    width: 50vw;
+    bottom: 0;
+    top: 0;
+    background: #FFFFFF
+}
+
+.bop-editor-pane.active {
+    right: 0;
+}
