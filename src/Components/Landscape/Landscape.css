@@ -1,0 +1,61 @@
+:root {
+    --background: #DD6655;
+    --foreground1: #331133;
+    --foreground2: #552255;
+    --foreground3: #993366;
+}
+
+#landscape {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+    background: var(--background);
+}
+
+.foreground1 {
+    background: var(--foreground1);
+    position: absolute;
+    bottom: -65%;
+    left: -30%;
+    z-index: 3;
+    width: 150%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.foreground2 {
+    background: var(--foreground2);
+    position: absolute;
+    bottom: -50%;
+    right: -60%;
+    z-index: 2;
+    width: 150%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.foreground3 {
+    background: var(--foreground3);
+    position: absolute;
+    bottom: -40%;
+    left: -30%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.sun {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: #fff4d650;
+}

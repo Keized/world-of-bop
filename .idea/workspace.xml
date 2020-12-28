@@ -20,17 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0757b3a-ecc6-4ba0-ac31-4d4678b42308" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Atoms/editor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Filters/Filters.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Landscape/Landscape.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Landscape/Landscape.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Atoms/bop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atoms/bop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AddBopButton/AddBopButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddBopButton/AddBopButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Bop/Bop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Bop/Bop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Filters/Fiters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filters/Fiters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Editor/BopEditor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/BopEditor/BopEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Editor/BopEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Home.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/World/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/World/World.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +140,8 @@
       <workItem from="1608139716054" duration="10541000" />
       <workItem from="1608182766279" duration="24000" />
       <workItem from="1608236953133" duration="5082000" />
+      <workItem from="1609023401734" duration="5416000" />
+      <workItem from="1609068606502" duration="11389000" />
     </task>
     <servers />
   </component>

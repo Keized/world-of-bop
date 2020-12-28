@@ -1,24 +1,30 @@
 import {atom, atomFamily, selector, selectorFamily} from "recoil";
-import {getRandomColor, getRandomPosition} from "../helpers/helpers";
+import { uuid } from 'uuidv4';
 
-export const bopsState = atom({
-    key: 'bops-state',
-    default: {
-        1: {
-            name: 'bopi',
-            color: getRandomColor(),
-            position: getRandomPosition()
-        }
+export const selectedBopIdState = atom({
+    key: 'selected-bop-id',
+    default: null
+})
+
+export const bopListQuery = selector({
+    key: 'bop-list-query',
+    get: async() => {
+        const response = await fetch('http://localhost:3001/bops');
+        return await response.json();
     }
 })
 
+export const bopsState = atom({
+    key: 'bops-state',
+    default: {}
+})
 
 export const addBopSelector = selector({
     key: 'add-bops-selector',
     get: ({get}) => {
         return get(bopsState);
     },
-    set: ({get, set}, value) => {
+    set: async({get, set}, value) => {
         const state = get(bopsState);
         set(bopsState, {...state, [value.id]: value});
     }
@@ -29,8 +35,29 @@ export const bopSelectorFamily = selectorFamily({
     get: param => ({get}) => {
         return get(bopsState)[param];
     },
-    set: param => ({set, get}, newState) => {
-        set(bopsState, s => ({...s, [param]: newState}))
+    set: (param) => async({set, get}, newState) => {
+        // if (param) {
+        //     set(bopsState, s => ({...s, [param]: newState}))
+        // } else {
+        //     set(bopsState, s => ({...s, [newState.id]: newState}))
+        // }
+
+        console.log(get(bopsState))
+        const headers = { 'Content-Type': 'application/json' }
+        const method = 'POST';
+        const body = JSON.stringify({
+            ...get(bopsState),
+            [param || newState.id]: newState
+        })
+        const response = await fetch('http://localhost:3001/bops', { method, headers, body });
+        const data = await response.json()
+        set(bopsState, data);
+        // console.log(data)
+        console.log(data)
+        console.log(get(bopsState))
+
+
+
     }
 })
 
@@ -74,5 +101,12 @@ export const filteredBopSelector = selector({
             }
             return acc;
         }, {})
+    }
+})
+
+export const selectedBopSelector = selector({
+    key: 'selected-bop-selector',
+    get: ({get}) => {
+
     }
 })

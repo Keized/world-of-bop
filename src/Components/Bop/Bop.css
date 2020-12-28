@@ -4,73 +4,42 @@
     height: 20px;
     background: black;
     animation: 500ms bounce infinite alternate ease-out;
-    box-shadow: inset -1px -1px 5px #00000020;
+    box-shadow: inset 1px -1px 1px #00000020;
     position: absolute;
     bottom: 0;
 }
 
 .bop-eye {
+    box-shadow: inset 1px -1px 1px #00000020;
     display: block;
     position: absolute;
     border-radius: 50%;
     width: 8px;
     height: 8px;
     background: #FFFFFF;
-    left: 0;
+    left: 50%;
+    transform: translateX(50%);
 }
 
 .bop-eye:nth-child(1) {
-    right: 0;
-    left: auto;
+    transform: translateX(-40%);
 }
 
 .bop-eye::before {
     content: '';
     position: absolute;
     background: black;
-    bottom: 2px;
+    bottom: 1px;
     width: 3px;
     height: 3px;
     border-radius: 50%;
-    right: 0;
-}
-
-.bop-eye:nth-child(1)::before {
-    right: auto;
-    left: 0;
-}
-
-.bop-mouth::before, .bop-mouth::after {
-    content: '';
-    left: 40%;
-    position: absolute;
-    background: white;
-    top: 0;
-    height: 2px;
-    width: 1px;
-}
-
-.bop-mouth::after {
-    left: auto;
-    right: 40%;
-}
-
-.bop-mouth {
-    background: black;
-    position: absolute;
-    bottom: 3px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 4px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius:  25px;
+    transform: translateX(-30%);
 }
 
 .bop-wrapper{
-    transform: scale(2);
     width: 20px;
-    height: 60px;
+    height: 20px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -79,6 +48,15 @@
 .bop-wrapper.edited{
     transform: scale(5);
     position: relative;
+    animation: none;
+}
+
+.bop-wrapper.edited::after{
+    display: none;
+}
+
+.bop-wrapper.edited .bop{
+    animation: none;
 }
 
 .bop-wrapper::after{
