@@ -5,7 +5,7 @@
     width: 50vw;
     bottom: 0;
     top: 0;
-    background: #FFFFFF
+    background-image: linear-gradient(to bottom, #FFFFFF, #16dbf5)
 }
 
 .bop-editor-pane.active {

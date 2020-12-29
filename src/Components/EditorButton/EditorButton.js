@@ -1,22 +1,10 @@
-import {addBopSelector} from "../../Atoms/bop";
-import {v4 as uuidV4} from "uuid";
-import {getRandomColor, getRandomPosition} from "../../helpers/helpers";
 import {useSetRecoilState} from "recoil";
 import {bopEditorPaneState} from "../../Atoms/editor";
 
 export default function EditorButton() {
-    const addBop = useSetRecoilState(addBopSelector);
     const setBopEditorPane = useSetRecoilState(bopEditorPaneState)
 
     const onClick = () => {
-        // const bop = {
-        //     id: uuidV4(),
-        //     name: uuidV4(),
-        //     position: getRandomPosition(),
-        //     color: getRandomColor()
-        // }
-        //
-        // addBop(bop);
         setBopEditorPane({active: true});
     }
 

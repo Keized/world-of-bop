@@ -1,74 +1,70 @@
-import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
-import { v4 as uuid } from 'uuid';
-import {getRandomColor, getRandomPosition} from "../../helpers/helpers";
-import {bopSelectorFamily, bopsState} from "../../Atoms/bop";
-import './BopEditor.css'
-import {bopEditorPaneState} from "../../Atoms/editor";
-import {useEffect, useState} from "react";
+import { useRecoilState } from "recoil";
+import { getRandomColor, getRandomPosition } from "../../helpers/helpers";
+import { bopSelectorFamily, selectedBopIdState } from "../../Atoms/bop";
+import { bopEditorPaneState } from "../../Atoms/editor";
+import { useEffect, useState } from "react";
 import Bop from "../Bop/Bop";
+import { CirclePicker } from "react-color";
+import './BopEditor.css'
 
-export default function BopEditor({bopId}) {
-    const [bop, setBop] = useRecoilState(bopSelectorFamily(bopId))
+const defaultBop = {
+    name: 'Bop',
+    color: getRandomColor(),
+    positions: getRandomPosition()
+}
+
+export default function BopEditor() {
+    const [selected, setSelected] = useRecoilState(selectedBopIdState)
+    const [bop, setBop] = useRecoilState(bopSelectorFamily(selected))
     const [bopEditorPane, setBopEditorPane] = useRecoilState(bopEditorPaneState);
-    const [editedBop, editBop] = useState({});
+    const [editedBop, editBop] = useState(defaultBop);
 
     useEffect(() => {
-        if (bop) {
-            editBop(bop)
-        } else {
-            const bopId = uuid();
-            const newBop = {
-                id: uuid(),
-                name: 'bop',
-                color: getRandomColor(),
-                position: getRandomPosition()
-            };
-            editBop(newBop);
-        }
-    }, [bopId])
+        editBop(bop || defaultBop)
+    }, [bop])
 
     const reset = () => {
-        const bopId = uuid();
-        const newBop = {
-            id: uuid(),
-            name: 'bop',
-            color: getRandomColor(),
-            position: getRandomPosition()
-        };
-        editBop(newBop);
+        editBop(defaultBop);
     }
 
     const save = () => {
         setBop(editedBop);
-        setBopEditorPane({active: false});
-        reset();
+        onClose();
+    }
+
+    const onChange = (e) => {
+        editBop((s) => ({
+            ...s,
+            [e.target.name]: e.target.value
+        }))
     }
 
     const onClose = () => {
+        reset();
         setBopEditorPane({active: false});
+        setSelected(null);
     }
 
     return (
-        <div className={`${bopEditorPane.active ? 'active' : ''} bop-editor-pane`}>
+        <div className={`${bopEditorPane.active ? 'active' : ''} bop-editor-pane bg-blue-200`}>
             <div className='p-4 flex h-full flex-col justify-between'>
                 <div className="flex-1 flex flex-col items-center justify-center">
-                        <Bop edited color={editedBop.color} name={editedBop.name} />
+                    <Bop edited color={editedBop.color} name={editedBop.name} />
                 </div>
-                <div className=" flex flex-col p-4 mb-8">
-                    <div>
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" onChange={(e) => editBop((s) => ({...s, name: e.target.value}))} value={editedBop.name}/>
-                    </div>
-                    <div>
-                        <label htmlFor="color">Color</label>
-                        <input type="text" id="color" onChange={(e) => editBop((s) => ({...s, color: e.target.value}))} value={editedBop.color}/>
-                    </div>
-                </div>
-                <div>
-                    <button className="block w-full text-center mb-2 p-2 bg-blue-500 text-white" onClick={save}>Save</button>
-                    <button className="block w-full text-center p-2 bg-gray-400 text-white" onClick={onClose}>Close</button>
-                </div>
+                <div className=" flex flex-col p-4 mb-8 text-center">
+                    <input type="text" name="name" onChange={onChange} value={editedBop.name} autoComplete={"off"} className="bg-transparent focus:outline-none mb-4 w-full text-center text-xl" placeholder="Name"/>
 
+                    <CirclePicker
+                        color={ editedBop.color }
+                        onChangeComplete={ (color) => {
+                            editBop((s) => ({...s, color: color.hex}))
+                        }}
+                    />
+                </div>
+                <div className="flex">
+                    <button className="block w-full text-center p-2 bg-gray-100 rounded mx-4" onClick={onClose}>Close</button>
+                    <button className="block w-full text-center p-2 bg-blue-500 text-white rounded mx-4" onClick={save}>Save</button>
+                </div>
             </div>
         </div>
     )
