@@ -1,24 +1,15 @@
 {
   "list": [
     {
-      "id": "5d738044-c7e8-4702-b36b-c080f33e9e7f",
+      "id": "2979054b-060e-421a-85cb-771c7f56e52b",
       "name": "Bop"
     },
     {
-      "id": "2979054b-060e-421a-85cb-771c7f56e52b",
+      "id": "e1d0d04a-9ba2-4f91-924a-54dd910beb6d",
       "name": "Bop"
     }
   ],
   "details": [
-    {
-      "id": "5d738044-c7e8-4702-b36b-c080f33e9e7f",
-      "name": "Bop",
-      "color": "#cddc39",
-      "positions": [
-        73,
-        56
-      ]
-    },
     {
       "id": "2979054b-060e-421a-85cb-771c7f56e52b",
       "name": "Bop",
@@ -26,6 +17,15 @@
       "positions": [
         47,
         5
+      ]
+    },
+    {
+      "id": "e1d0d04a-9ba2-4f91-924a-54dd910beb6d",
+      "name": "Bop",
+      "color": "#795548",
+      "positions": [
+        16,
+        64
       ]
     }
   ]

@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0757b3a-ecc6-4ba0-ac31-4d4678b42308" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/World.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
@@ -27,9 +28,9 @@
       <change beforePath="$PROJECT_DIR$/src/Components/BopItem/BopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BopItem/BopItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Editor/BopEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Editor/BopEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/EditorButton/EditorButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/EditorButton/EditorButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/World.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/World.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Recoil/atoms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recoil/atoms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recoil/effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recoil/effects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recoil/effects.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Recoil/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recoil/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/helpers.js" afterDir="false" />
     </list>
@@ -135,7 +136,7 @@
       <workItem from="1609023401734" duration="5416000" />
       <workItem from="1609068606502" duration="11389000" />
       <workItem from="1609522837699" duration="7498000" />
-      <workItem from="1609610566227" duration="15866000" />
+      <workItem from="1609610566227" duration="18428000" />
     </task>
     <servers />
   </component>

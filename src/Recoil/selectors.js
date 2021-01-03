@@ -9,17 +9,12 @@ export const bopListQuery = selector({
     }
 });
 
-export const postBopQuery = selectorFamily({
-    key: 'post-bop-query',
-    get: async (params) => {
-        console.log(params);
-
-    }
-})
-
 export const bopDetailsQuery = selectorFamily({
     key: 'bop-details-query',
     get: (param) => async () => {
+        if (!param) {
+            return {};
+        }
         const response = await fetch(`http://localhost:3001/details/${param}`);
         return await response.json();
     }

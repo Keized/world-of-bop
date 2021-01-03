@@ -1,4 +1,4 @@
-import { useRecoilCallback, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilCallback, useRecoilState, useRecoilValue } from "recoil";
 import { getRandomColor, getRandomPosition } from "../../helpers/helpers";
 import { bopEditorPaneState } from "../../Recoil/atoms";
 import { useEffect, useState } from "react";
@@ -7,7 +7,6 @@ import { CirclePicker } from "react-color";
 import './BopEditor.css'
 import { bopDetails, bopList, selectedBopId } from '../../Recoil/atoms';
 import { v4 } from 'uuid';
-import { postBopQuery } from '../../Recoil/selectors';
 
 export default function BopEditor() {
     const defaultBop = {
@@ -18,7 +17,7 @@ export default function BopEditor() {
     }
 
     const [selected, setSelected] = useRecoilState(selectedBopId);
-    const [details, setDetails] = useRecoilState(bopDetails(selected));
+    const details = useRecoilValue(bopDetails(selected));
     const [bopEditorPane, setBopEditorPane] = useRecoilState(bopEditorPaneState);
     const [editedBop, setEditedBop] = useState(defaultBop);
 
@@ -34,7 +33,7 @@ export default function BopEditor() {
         setEditedBop(defaultBop);
     }
 
-    const save = useRecoilCallback(({ set, snapshot }) => async (params) => {
+    const save = useRecoilCallback(({ set, snapshot }) => async () => {
         let body;
         let detailsData;
         const listUrl = 'http://localhost:3001/list';
@@ -59,6 +58,22 @@ export default function BopEditor() {
         }
 
         set(bopDetails(details.id), detailsData);
+
+        onClose();
+    })
+
+    const remove = useRecoilCallback(({ set, snapshot }) => async () => {
+        const listUrl = 'http://localhost:3001/list';
+        const detailsUrl = 'http://localhost:3001/details';
+        const headers = { 'Content-Type': 'application/json' };
+
+        await fetch(`${detailsUrl}/${selected}`, { headers, method: 'DELETE' });
+        await fetch(`${listUrl}/${selected}`, { headers, method: 'DELETE' });
+
+        const currentList = await snapshot.getPromise(bopList);
+        set(bopList, currentList.filter(i => i.id !== selected));
+
+        set(bopDetails(details.id), null);
 
         onClose();
     })
@@ -94,6 +109,9 @@ export default function BopEditor() {
                 </div>
                 <div className="flex">
                     <button className="block w-full text-center p-2 bg-gray-100 rounded mx-4" onClick={onClose}>Close</button>
+                    {
+                        selected && <button className="block w-full text-center p-2 bg-red-900 rounded mx-4" onClick={remove}>Delete</button>
+                    }
                     <button className="block w-full text-center p-2 bg-blue-500 text-white rounded mx-4" onClick={save}>Save</button>
                 </div>
             </div>

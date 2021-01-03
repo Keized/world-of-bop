@@ -1,5 +1,4 @@
 import { atom, atomFamily } from 'recoil';
-import { initDetailsEffect, persistDetailsEffect } from './effects';
 import { bopListQuery, bopDetailsQuery } from './selectors';
 
 export const bopDetails = atomFamily({
