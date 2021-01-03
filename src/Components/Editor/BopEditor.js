@@ -1,12 +1,13 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilCallback, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { getRandomColor, getRandomPosition } from "../../helpers/helpers";
-import { bopEditorPaneState } from "../../Atoms/editor";
+import { bopEditorPaneState } from "../../Recoil/atoms";
 import { useEffect, useState } from "react";
 import Bop from "../Bop/Bop";
 import { CirclePicker } from "react-color";
 import './BopEditor.css'
 import { bopDetails, bopList, selectedBopId } from '../../Recoil/atoms';
 import { v4 } from 'uuid';
+import { postBopQuery } from '../../Recoil/selectors';
 
 export default function BopEditor() {
     const defaultBop = {
@@ -16,14 +17,13 @@ export default function BopEditor() {
         positions: getRandomPosition()
     }
 
-    const setList = useSetRecoilState(bopList);
     const [selected, setSelected] = useRecoilState(selectedBopId);
     const [details, setDetails] = useRecoilState(bopDetails(selected));
     const [bopEditorPane, setBopEditorPane] = useRecoilState(bopEditorPaneState);
     const [editedBop, setEditedBop] = useState(defaultBop);
 
     useEffect(() => {
-        if (Object.keys(details).length) {
+        if (details && Object.keys(details).length) {
             setEditedBop(details)
         } else {
             setEditedBop(defaultBop)
@@ -34,21 +34,34 @@ export default function BopEditor() {
         setEditedBop(defaultBop);
     }
 
-    const save = () => {
-        setDetails(editedBop);
-        if (!selected) {
-            setList((s) => [...s, editedBop])
+    const save = useRecoilCallback(({ set, snapshot }) => async (params) => {
+        let body;
+        let detailsData;
+        const listUrl = 'http://localhost:3001/list';
+        const detailsUrl = 'http://localhost:3001/details';
+        const headers = { 'Content-Type': 'application/json' };
+
+        if (selected) {
+            body = JSON.stringify(editedBop);
+            const detailsResponse = await fetch(`${detailsUrl}/${selected}`, {headers, method: 'PUT', body});
+            detailsData = await detailsResponse.json();
         } else {
-            setList((s) => s.map((bop) => {
-                const copy = {...bop}
-                if (bop.id === selected) {
-                    copy.name = editedBop.name;
-                }
-                return copy;
-            }))
+            body = JSON.stringify(editedBop);
+            const detailsResponse = await fetch(detailsUrl, {headers, method: 'POST', body});
+            detailsData = await detailsResponse.json();
+
+            body = JSON.stringify({ id: editedBop.id, name: editedBop.name });
+            const listResponse = await fetch(listUrl, {headers, method: 'POST', body});
+            const listData = await listResponse.json();
+
+            const currentList = await snapshot.getPromise(bopList);
+            set(bopList, [...currentList, listData]);
         }
+
+        set(bopDetails(details.id), detailsData);
+
         onClose();
-    }
+    })
 
     const onChange = (e) => {
         setEditedBop((s) => ({

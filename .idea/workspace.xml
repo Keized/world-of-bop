@@ -20,20 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0757b3a-ecc6-4ba0-ac31-4d4678b42308" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/BopItem/BopItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ErrorBoundary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Recoil/atoms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Recoil/effects.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Recoil/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Atoms/bop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Bop/Bop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Bop/Bop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Editor/BopEditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Editor/BopEditor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Atoms/editor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/BopItem/BopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BopItem/BopItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Editor/BopEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Editor/BopEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Filters/Fiters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filters/Fiters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/World.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/EditorButton/EditorButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/EditorButton/EditorButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/World.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recoil/atoms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recoil/atoms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recoil/effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recoil/effects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recoil/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recoil/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/helpers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +82,11 @@
       <recent name="$PROJECT_DIR$/src/Pages/Routine" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\www\world-of-bop\src\Components" />
       <recent name="E:\www\world-of-bop\src" />
       <recent name="$PROJECT_DIR$/src/Pages" />
       <recent name="$PROJECT_DIR$/src/Pages/Events" />
       <recent name="$PROJECT_DIR$/src/Pages/Admin" />
-      <recent name="$PROJECT_DIR$/src/Shared" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -136,6 +134,8 @@
       <workItem from="1608236953133" duration="5082000" />
       <workItem from="1609023401734" duration="5416000" />
       <workItem from="1609068606502" duration="11389000" />
+      <workItem from="1609522837699" duration="7498000" />
+      <workItem from="1609610566227" duration="15866000" />
     </task>
     <servers />
   </component>

@@ -4,11 +4,7 @@ import { bopListQuery, bopDetailsQuery } from './selectors';
 
 export const bopDetails = atomFamily({
     key: 'bop-details',
-    default: {},
-    effects_UNSTABLE: (param) => [
-        initDetailsEffect(param),
-        persistDetailsEffect(param)
-    ]
+    default: bopDetailsQuery,
 });
 
 export const bopList = atom({
@@ -25,3 +21,10 @@ export const selectedBopId = atom({
     key: 'selected-bop-id',
     default: null,
 });
+
+export const bopEditorPaneState = atom({
+    key: 'bop-editor-pane-state',
+    default: {
+        active: false
+    }
+})

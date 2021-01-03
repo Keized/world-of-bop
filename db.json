@@ -1,44 +1,31 @@
 {
   "list": [
     {
-      "id": "1",
-      "name": "Bopi"
+      "id": "5d738044-c7e8-4702-b36b-c080f33e9e7f",
+      "name": "Bop"
     },
     {
-      "id": "2",
-      "name": "Bopa"
-    },
-    {
-      "id": "6eec3a7a-04e6-4a82-b4f4-506014312cbe",
+      "id": "2979054b-060e-421a-85cb-771c7f56e52b",
       "name": "Bop"
     }
   ],
   "details": [
     {
-      "id": "1",
-      "name": "Bopii",
-      "color": "#e91e63",
-      "positions": [
-        20,
-        20
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Bopa",
-      "color": "#2196f3",
-      "positions": [
-        30,
-        66
-      ]
-    },
-    {
-      "id": "6eec3a7a-04e6-4a82-b4f4-506014312cbe",
+      "id": "5d738044-c7e8-4702-b36b-c080f33e9e7f",
       "name": "Bop",
-      "color": "#2196f3",
+      "color": "#cddc39",
       "positions": [
-        3,
-        72
+        73,
+        56
+      ]
+    },
+    {
+      "id": "2979054b-060e-421a-85cb-771c7f56e52b",
+      "name": "Bop",
+      "color": "#4caf50",
+      "positions": [
+        47,
+        5
       ]
     }
   ]

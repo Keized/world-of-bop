@@ -1,5 +1,5 @@
 import {useSetRecoilState} from "recoil";
-import {bopEditorPaneState} from "../../Atoms/editor";
+import {bopEditorPaneState} from "../../Recoil/atoms";
 
 export default function EditorButton() {
     const setBopEditorPane = useSetRecoilState(bopEditorPaneState)

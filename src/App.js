@@ -1,7 +1,7 @@
 import './App.css';
 import {Suspense} from 'react';
 import {RecoilRoot} from "recoil";
-import World from "./Pages/World";
+import World from "./Components/World";
 import ErrorBoundary from './Components/ErrorBoundary';
 
 function App() {

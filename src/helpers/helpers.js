@@ -8,7 +8,6 @@ export function getRandomColor() {
     return availableColors[index];
 }
 
-
 export function getRandomPosition() {
     const x = random(100);
     const y = random(100);

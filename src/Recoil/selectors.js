@@ -1,4 +1,4 @@
-import { selector } from 'recoil';
+import { selector, selectorFamily } from 'recoil';
 import { bopFilter, bopList } from './atoms';
 
 export const bopListQuery = selector({
@@ -9,7 +9,15 @@ export const bopListQuery = selector({
     }
 });
 
-export const bopDetailsQuery = selector({
+export const postBopQuery = selectorFamily({
+    key: 'post-bop-query',
+    get: async (params) => {
+        console.log(params);
+
+    }
+})
+
+export const bopDetailsQuery = selectorFamily({
     key: 'bop-details-query',
     get: (param) => async () => {
         const response = await fetch(`http://localhost:3001/details/${param}`);
