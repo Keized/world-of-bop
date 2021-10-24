@@ -1,0 +1,105 @@
+.bop {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: black;
+    animation: 500ms bounce infinite alternate ease-out;
+    box-shadow: inset 1px -1px 1px #00000020;
+    position: absolute;
+    bottom: 0;
+}
+
+.bop-eye {
+    box-shadow: inset 1px -1px 1px #00000020;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    left: 50%;
+    transform: translateX(50%);
+}
+
+.bop-eye:nth-child(1) {
+    transform: translateX(-40%);
+}
+
+.bop-eye::before {
+    content: '';
+    position: absolute;
+    background: black;
+    bottom: 1px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-30%);
+}
+
+.bop-wrapper{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.bop-wrapper.edited{
+    transform: scale(5);
+    position: relative;
+    animation: none;
+}
+
+.bop-wrapper.edited::after{
+    display: none;
+}
+
+.bop-wrapper.edited .bop{
+    animation: none;
+}
+
+.bop-wrapper::after{
+    position: absolute;
+    background: #00000010;
+    display: block;
+    content: '';
+    width: 20px;
+    height: 5px;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px #00000050;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    animation: 500ms shadow-bounce infinite alternate ease-out;
+}
+
+@keyframes shadow-bounce {
+    0% {
+        width: 30px;
+    }
+    20% {
+        width: 20px;
+    }
+    100% {
+        width: 20px;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        width: 30px;
+        height: 18px;
+    }
+    20% {
+        transform: translateY(-40%);
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        transform: translateY(-200%);
+        width: 20px;
+        height: 20px;
+    }
+}
